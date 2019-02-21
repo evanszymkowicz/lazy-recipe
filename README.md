@@ -1,5 +1,8 @@
 # lazy-recipe
 
+Feb 20, 2019:
+
+Couple of bugs to take care of, but it is deployed (testing out continuous delivery feature on Heroku, too)
 
 ## Uses:
 Life-cyle methods
