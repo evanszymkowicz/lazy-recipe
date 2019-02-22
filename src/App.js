@@ -4,33 +4,45 @@ import { recipes } from './tempList'
 import RecipeList from './components/RecipeList'
 import RecipeDetails from './components/RecipeDetails'
 
+//class based method with async/await
+//   async getRecipes(){
+//     try {
+//       const data = await fetch(this.state.url)
+//       const jsonData = await data.json();
+//       this.setState({
+//         recipes:jsonData.recipes
+//       });
+//     } catch(error){
+//       console.log(error);
+//     }
+//   }
+//
+//   componentDidMount(){
+//     this.getRecipes()
+// }
+//   return() {
+//     console.log(this.state.recipes);
+//   }
+
+//"https://www.food2fork.com/api/search?key=40f22ab173c6c8fab4783e778d52e0da",
+
 class App extends Component {
   state = {
-    recipes: [], //empty array
-    url: "https://www.food2fork.com/api/search?key=40f22ab173c6c8fab4783e778d52e0da",
-    details_id: 35382,
-    pageIndex: 1
+    recipes: recipes,
+    url: `https://www.food2fork.com/api/search?key=${
+      process.env.REACT_APP_API_KEY
+    }`,
+    base_url: `https://www.food2fork.com/api/search?key=${
+      process.env.REACT_APP_API_KEY
+    }`,
+    details_id: 35389,
+    pageIndex: 1,
+    search: "",
+    query: "&q=",
+    error: ""
   };
-      //class based method with async/await
-      //   async getRecipes(){
-      //     try {
-      //       const data = await fetch(this.state.url)
-      //       const jsonData = await data.json();
-      //       this.setState({
-      //         recipes:jsonData.recipes
-      //       });
-      //     } catch(error){
-      //       console.log(error);
-      //     }
-      //   }
-      //
-      //   componentDidMount(){
-      //     this.getRecipes()
-      // }
-      //   return() {
-      //     console.log(this.state.recipes);
-      //   }
-async getRecipes() {
+
+  async getRecipes() {
     try {
       const data = await fetch(this.state.url);
       const jsonData = await data.json();
@@ -54,7 +66,6 @@ async getRecipes() {
   }
 
   displayPage = index => {
-    //index param
     switch (index) {
       default:
       case 1:
@@ -74,7 +85,7 @@ async getRecipes() {
             id={this.state.details_id}
             handleIndex={this.handleIndex}
           />
-      );
+        );
     }
   };
 

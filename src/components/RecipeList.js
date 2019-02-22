@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import Recipe from './Recipe'
-import RecipeSearch from './RecipeSearch'
+import React, { Component } from "react";
+import Recipe from "./Recipe";
+import RecipeSearch from "./RecipeSearch";
 
 export default class RecipeList extends Component {
-  render () {
+  render() {
     const {
       recipes,
       handleDetails,
@@ -11,7 +11,7 @@ export default class RecipeList extends Component {
       handleSubmit,
       handleChange,
       error
-    } = this.props
+    } = this.props;
 
     return (
       <React.Fragment>

@@ -23,7 +23,7 @@ export default class Recipe extends Component {
             <div className="card-body text-capitalize">
               <h6>{title}</h6>
               <h6 className="text-warning text-slanted">
-                provided by {publisher}
+                Provided by {publisher}
               </h6>
             </div>
             <div className="card-footer">
@@ -32,7 +32,7 @@ export default class Recipe extends Component {
                 className="btn btn-primary text-capitalize"
                 onClick={() => handleDetails(0, recipe_id)}
               >
-                details
+                Details
               </button>
               <a
                 href={source_url}
@@ -40,7 +40,7 @@ export default class Recipe extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Full recipe
+                Full Recipe:
               </a>
             </div>
           </div>
