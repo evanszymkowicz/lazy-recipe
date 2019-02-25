@@ -24,7 +24,7 @@ export default class RecipeList extends Component {
           {/* title */}
           <div className="row">
             <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3">
-              <h1 className="text-slanted">What's for Dinner:</h1>
+              <h1 className="text-slanted">recipe list</h1>
             </div>
           </div>
           {/* end of title */}
@@ -39,12 +39,12 @@ export default class RecipeList extends Component {
                     recipe={recipe}
                     handleDetails={handleDetails}
                   />
-                )
+                );
               })
             )}
           </div>
         </div>
       </React.Fragment>
-    )
+    );
   }
 }
